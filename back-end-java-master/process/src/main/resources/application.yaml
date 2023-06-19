@@ -1,0 +1,76 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: auth-service
+  liquibase:
+    enabled: true
+    contexts: ${LIQUIBASE_CONTEXTS:default}
+    change-log: classpath:/changelog/db.changelog-master.yaml
+  data:
+    mongodb:
+      host: ${MONGO_BD_HOST:mongodb}
+      port: ${MONGO_BD_PORT:27017}
+      username: ${MONGO_BD_USERNAME:root}
+      password: ${MONGO_BD_PASSWORD:root}
+      authentication-database: admin
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5436/process-service
+    username: postgres
+    password: postgres
+    hikari:
+      connection-timeout: 80000
+      maximum-pool-size: ${DATASOURCE_CONNECTIONS:5}
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: validate
+  activemq:
+    broker-url: ${ACTIVEMQ_URI:tcp://localhost:61616}
+    in-memory: false
+    non-blocking-redelivery: true
+    packages:
+      trust-all: true
+    pool:
+      block-if-full: true
+      block-if-full-timeout: -1
+      enabled: false
+      idle-timeout: 30000
+      max-connections: 1
+      time-between-expiration-check: -1
+      use-anonymous-producers: true
+  jms:
+    listener:
+      acknowledge-mode: auto
+      auto-startup: true
+      concurrency: 1
+      max-concurrency: 1
+    pub-sub-domain: true
+    template:
+      default-destination:
+      delivery-mode: non_persistent
+      priority: 100
+      qos-enabled: true
+      receive-timeout: 1000
+      time-to-live: 36000
+
+jwt:
+  secret: secretKey124214
+  accessTokenExpiry: 6000000000000
+  refreshTokenExpiry: 3200000
+
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true
+
+client:
+  storage-uri: ${STORAGE_URI:http://localhost:8081}
+  organization-uri: ${ORGANIZATION_URI:http://localhost:8083}
+
+feign:
+  autoconfiguration:
+    jackson:
+      enabled: true

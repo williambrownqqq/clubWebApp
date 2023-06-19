@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/Open Closed Principle/blogposts" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/assignment - correct mistakes/sfg-di" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sfg-Dependency Injection" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sfg-di-pets" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sfg-pet-clinic" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/spring-petclinic" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/spring5-jokes-app-v2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/spring5-recipe-app" vcs="Git" />
+  </component>
+</project>

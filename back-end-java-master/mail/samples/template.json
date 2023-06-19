@@ -1,0 +1,5 @@
+{
+  "name": "first",
+  "body": "<html xmlns:th=\"http://www.thymeleaf.org\"><body><span> Доброго дня, <span th:text=\"${to.firstName}\"></span> <span th:text=\"${to.fathersName}\"></span>! </span> <br><br>Надсилаю <span th:text=\"${customText}\"></span>.<br><br>Студент <span th:text=\"${from.lastName}\"></span> <span th:text=\"${from.firstName}\"></span> <span th:text=\"${from.fathersName}\"></span>.<br><br>Дата: <span th:text=\"${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}\"></span></body></html>",
+  "subject": "Передзахист"
+}

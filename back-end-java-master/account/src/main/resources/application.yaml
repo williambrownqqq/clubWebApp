@@ -1,0 +1,32 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: auth-service
+  liquibase:
+    enabled: true
+    contexts: ${LIQUIBASE_CONTEXTS:default}
+    change-log: classpath:/changelog/db.changelog-master.yaml
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/auth-service
+    username: postgres
+    password: postgres
+    hikari:
+      connection-timeout: 80000
+      maximum-pool-size: ${DATASOURCE_CONNECTIONS:5}
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: validate
+
+jwt:
+  secret: secretKey124214
+  accessTokenExpiry: 6000000000000
+  refreshTokenExpiry: 3200000
+
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true

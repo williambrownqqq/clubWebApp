@@ -1,0 +1,55 @@
+So this is Spring Boot application,
+
+it is running embedded Tomcat and I do have
+
+a simple controller here.
+
+I have two controllers, an IndexController,
+
+returns back the Thymeleaf view of index.
+
+A ProductController that shows some products,
+
+I do have a simple domain class called Product,
+
+using JPA mappings.
+
+Now this is going to be backed by an H2
+
+in memory database and to access data
+
+we are going through Spring Data JPA,
+
+using a CrudRepository and the one secret sauce
+
+here is I have a ProductLoader to on start up
+
+ContextRefreshedEvent looks for that
+
+and we add in a couple of products
+
+so we get some data preloaded in our H2 in memory database.
+
+And we want to see a little Spring Security
+
+so we even have Spring Security set up,
+
+we're using an in memory authentication,
+
+admin ADMIN, user USER.
+
+Trying to remember what I had in the web configuration
+
+so all this sets up for the H2 database console.
+
+And let's see here.
+
+No big deal here we have Thymeleaf templates,
+
+using fragments to do a header
+
+and we have a little product form
+
+where we can actually add stuff into the database.
+
+Everything is running.

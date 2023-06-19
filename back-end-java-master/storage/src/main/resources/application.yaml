@@ -1,0 +1,46 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: storage-service
+  liquibase:
+    enabled: true
+    contexts: ${LIQUIBASE_CONTEXTS:default}
+    change-log: classpath:/changelog/db.changelog-master.yaml
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/storage-service
+    username: postgres
+    password: postgres
+    hikari:
+      connection-timeout: 80000
+      maximum-pool-size: ${DATASOURCE_CONNECTIONS:5}
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: validate
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+storage:
+  location: stored-files
+
+jwt:
+  secret: secretKey124214
+
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true
+
+client:
+  account-uri: ${ACCOUNT_URI:http://localhost:8080}
+
+feign:
+  autoconfiguration:
+    jackson:
+      enabled: true

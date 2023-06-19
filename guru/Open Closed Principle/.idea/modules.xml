@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Open Closed Principle.iml" filepath="$PROJECT_DIR$/.idea/Open Closed Principle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/blogposts/blogposts.iml" filepath="$PROJECT_DIR$/blogposts/blogposts.iml" />
+    </modules>
+  </component>
+</project>

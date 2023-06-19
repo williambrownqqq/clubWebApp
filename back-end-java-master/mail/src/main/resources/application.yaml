@@ -1,0 +1,78 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: mail-service
+  liquibase:
+    enabled: true
+    contexts: ${LIQUIBASE_CONTEXTS:default}
+    change-log: classpath:/changelog/db.changelog-master.yaml
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5434/mail-service
+    username: postgres
+    password: postgres
+    hikari:
+      connection-timeout: 80000
+      maximum-pool-size: ${DATASOURCE_CONNECTIONS:5}
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: validate
+  mail:
+    host: ${SMTP_HOST:smtp.gmail.com}
+    port: ${SMTP_PORT:587}
+    username: ${SMTP_USERNAME:}
+    password: ${SMTP_PASSWORD:}
+    default-encoding: UTF-8
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+  activemq:
+    broker-url: ${ACTIVEMQ_URI:tcp://localhost:61616}
+    in-memory: false
+    non-blocking-redelivery: true
+    packages:
+      trust-all: true
+    pool:
+      block-if-full: true
+      block-if-full-timeout: -1
+      enabled: false
+      idle-timeout: 30000
+      max-connections: 1
+      time-between-expiration-check: -1
+      use-anonymous-producers: true
+  jms:
+    listener:
+      acknowledge-mode: auto
+      auto-startup: true
+      concurrency: 1
+      max-concurrency: 1
+    pub-sub-domain: true
+    template:
+      default-destination:
+      delivery-mode: non_persistent
+      priority: 100
+      qos-enabled: true
+      receive-timeout: 1000
+      time-to-live: 36000
+
+jwt:
+  secret: secretKey124214
+  accessTokenExpiry: 6000000000000
+
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true
+
+client:
+  storage-uri: ${STORAGE_URI:http://localhost:8081}
+  account-uri: ${ACCOUNT_URI:http://localhost:8080}
+
+feign:
+  autoconfiguration:
+    jackson:
+      enabled: true

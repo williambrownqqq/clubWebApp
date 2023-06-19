@@ -1,0 +1,68 @@
+{
+  "name": "ТІК",
+  "schema": {
+    "0": {
+      "stageType": "SEND_MAIL",
+      "name": "Матеріали ТІК",
+      "properties": {
+        "to": "subordinate",
+        "from": "owner",
+        "templateId": 1,
+        "emailParameters": {
+          "customText": "матеріали"
+        },
+        "attachmentsIds": [
+          1
+        ]
+      },
+      "nextStages": {
+        "DEFAULT": 1
+      }
+    },
+    "1": {
+      "stageType": "REVIEW_DOCUMENT",
+      "name": "Лабораторна 1",
+      "properties": {
+        "approvesRequired": 2,
+        "uploader": "subordinate",
+        "responsibleOrganizationUnitsIds": [
+          1
+        ]
+      },
+      "nextStages": {
+        "ACCEPTED": 3,
+        "REJECTED": 2
+      }
+    },
+    "2": {
+      "stageType": "SEND_MAIL",
+      "name": "помилка ТІК",
+      "properties": {
+        "to": "subordinate",
+        "from": "owner",
+        "templateId": 1,
+        "emailParameters": {
+          "customText": "помилка ТІК"
+        }
+      },
+      "nextStages": {
+        "DEFAULT": 1
+      }
+    },
+    "3": {
+      "stageType": "SEND_MAIL",
+      "name": "фінал ТІК",
+      "properties": {
+        "to": "subordinate",
+        "from": "owner",
+        "templateId": 1,
+        "emailParameters": {
+          "customText": "фінал ТІК"
+        }
+      },
+      "nextStages": {
+        "DEFAULT": null
+      }
+    }
+  }
+}
