@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71b1aa51-e117-4fc0-8997-c48963abcd75" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zanchenko/alexey/registration/UserController/MathEqController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zanchenko/alexey/registration/UserController/MathEqController.java" afterDir="false" />
-    </list>
+    <list default="true" id="71b1aa51-e117-4fc0-8997-c48963abcd75" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
